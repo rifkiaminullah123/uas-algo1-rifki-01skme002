@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator, Menghitung Luas, Menghitung Nilai</title>
+    <style type="text/css"> 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #03dac6;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card {
+    background: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card h2 {
+    color: #bb86fc;
+}
+label {
+    display: block;
+    margin-top: 10px;
+    color: #03dac6;
+}
+input, select, button {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #03dac6;
+    border-radius: 4px;
+}
+button {
+    background-color: #03dac6;
+    color: #3b10b1;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #00bfa5;
+}
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff0266;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+</style>
+</head>
+<body>
+    <h1>TUGAS UAS ALGO 1 ( REG C KELAS 01SKME002) </h1>
+    <div class="container">
+        <div class="card" id="kalkulator">
+            <h2>Kalkulator</h2>
+            <label for="num1">Masukkan angka 1:</label>
+            <input type="number" id="num1" step="any">
+            <label for="num2">Masukkan angka 2:</label>
+            <input type="number" id="num2" step="any">
+            <label for="operator">Pilih operator:</label>
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <button onclick="calculate()">Hitung</button>
+            <div class="result" id="kalkulatorResult"></div>
+        </div>
+
+        <div class="card" id="menghitungLuas">
+            <h2>Menghitung Luas</h2>
+            <label for="luasOption">Pilih:</label>
+            <select id="luasOption" onchange="showLuasInputs()">
+                <option value="lingkaran">Luas lingkaran</option>
+                <option value="persegi">Luas persegi/kotak</option>
+                <option value="persegiPanjang">Luas persegi panjang</option>
+                <option value="jajargenjang">Luas jajargenjang</option>
+            </select>
+            <div id="luasInputs"></div>
+            <button onclick="calculateLuas()">Hitung</button>
+            <div class="result" id="luasResult"></div>
+        </div>
+
+        <div class="card" id="menghitungNilai">
+            <h2>Menghitung Nilai Mahasiswa</h2>
+            <label for="nama">Masukkan Nama:</label>
+            <input type="text" id="nama">
+            <label for="nim">Masukkan NIM:</label>
+            <input type="text" id="nim">
+            <label for="kelas">Masukkan Kelas:</label>
+            <input type="text" id="kelas">
+            <label for="sks">Masukkan jumlah SKS:</label>
+            <select id="sks">
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label for="kehadiran">Masukkan Kehadiran:</label>
+            <input type="number" id="kehadiran" step="1">
+            <label for="tugas">Masukkan Tugas (0-100):</label>
+            <input type="number" id="tugas" step="any">
+            <label for="uts">Masukkan UTS (0-100):</label>
+            <input type="number" id="uts" step="any">
+            <label for="uas">Masukkan UAS (0-100):</label>
+            <input type="number" id="uas" step="any">
+            <button onclick="calculateNilai()">Hitung</button>
+            <div class="result" id="nilaiResult"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        TERIMA KASIH <br>
+        RIFKI AMINULLAH <br>
+        UPDATED 4 JULI 2024
+    </div>
+
+    <script src="source/script.js"></script>
+</body>
+</html>
